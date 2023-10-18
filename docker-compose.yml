@@ -12,7 +12,7 @@
 #
 # Using docker-compose it will:
 #
-# - create a network 'guacnetwork_compose' with the 'bridge' driver.
+# - create a network 'guacnetwork_compose' with the 'host' driver.
 # - create a service 'guacd_compose' from 'guacamole/guacd' connected to 'guacnetwork'
 # - create a service 'postgres_guacamole_compose' (1) from 'postgres' connected to 'guacnetwork'
 # - create a service 'guacamole_compose' (2)  from 'guacamole/guacamole/' conn. to 'guacnetwork'
@@ -86,7 +86,7 @@
 version: '2.0'
 
 # networks
-# create a network 'guacnetwork_compose' in mode 'bridged'
+# create a network 'guacnetwork_compose' in host so other PCs can be seen by guacamole
 networks:
   guacnetwork_compose:
     driver: host
